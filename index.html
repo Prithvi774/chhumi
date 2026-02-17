@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chhumi | Stillness Begins Within</title>
+    <meta name="description" content="Authentic Bodhichitta malas sourced from Kavrepalanchok, Nepal">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/images/logo.png" alt="Chhumi Logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                <span class="logo-text" style="display:none">CHHUMI</span>
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="#shop">Shop</a>
+            <a href="#about">Story</a>
+            <a href="#origin">Origin</a>
+            <a href="#" onclick="toggleCart()">
+                Cart (<span id="cart-count">0</span>)
+            </a>
+        </div>
+        <div class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#shop" onclick="toggleMobileMenu()">Shop</a>
+        <a href="#about" onclick="toggleMobileMenu()">Story</a>
+        <a href="#origin" onclick="toggleMobileMenu()">Origin</a>
+        <a href="#" onclick="toggleCart(); toggleMobileMenu()">Cart</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="" alt="Hero Background" class="hero-bg" id="hero-img">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 id="hero-headline">Loading...</h1>
+            <p id="hero-subtext">Loading...</p>
+            <a href="#shop" class="btn" id="hero-btn">Shop Collection</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 id="about-title">Loading...</h2>
+                <div class="divider"></div>
+                <p id="about-text" style="max-width: 700px; margin: 1.5rem auto 0; line-height: 2;"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Origin Section -->
+    <section id="origin" class="section origin-section">
+        <div class="container">
+            <div class="grid-2">
+                <div class="origin-image-wrapper">
+                    <img src="" id="origin-img" alt="Origin Story">
+                </div>
+                <div class="origin-content">
+                    <h2 id="origin-title">Loading...</h2>
+                    <div class="divider-left"></div>
+                    <p id="origin-text" style="line-height: 2;"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>The Collection</h2>
+                <p class="subtitle">Curated with Intention</p>
+            </div>
+            
+            <!-- Filter Buttons -->
+            <div class="product-filters">
+                <button class="filter-btn active" onclick="filterProducts('all')">All</button>
+                <button class="filter-btn" onclick="filterProducts('malas')">Malas</button>
+                <button class="filter-btn" onclick="filterProducts('bracelets')">Bracelets</button>
+                <button class="filter-btn" onclick="filterProducts('accessories')">Accessories</button>
+            </div>
+            
+            <div class="product-grid" id="product-container">
+                <!-- Products injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo" style="margin-bottom: 2rem;">
+                <img src="assets/images/logo.png" alt="Chhumi" class="logo-img" style="max-height: 40px;" onerror="this.style.display='none'">
+                <span class="logo-text" id="footer-logo">CHHUMI</span>
+            </div>
+            <div class="footer-links">
+                <a href="#">Shipping</a>
+                <a href="#">Returns</a>
+                <a href="#">Contact</a>
+                <a href="#">Instagram</a>
+            </div>
+            <div class="payment-methods">
+                <span>Visa</span>
+                <span>Mastercard</span>
+                <span>PayPal</span>
+            </div>
+            <p id="footer-text" class="copyright"></p>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer -->
+    <div class="cart-overlay" id="cart-overlay">
+        <div class="cart-drawer">
+            <div class="cart-header">
+                <h3>Your Cart</h3>
+                <span class="close-cart" onclick="toggleCart()">&times;</span>
+            </div>
+            <div class="cart-items" id="cart-items-container">
+                <p class="empty-cart">Your cart is empty.</p>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Subtotal</span>
+                    <span id="cart-total-price">$0.00</span>
+                </div>
+                <button class="btn btn-primary btn-full" onclick="checkout()">Proceed to Checkout</button>
+                <p class="secure-note">🔒 Secure checkout</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div class="admin-toggle" onclick="toggleAdmin()" title="Customize Site">⚙️</div>
+    <div class="admin-panel" id="admin-panel">
+        <h4>Site Customization</h4>
+        
+        <div class="admin-group">
+            <label>Site Name</label>
+            <input type="text" id="admin-site-name" oninput="updateConfig('site.name', this.value)">
+        </div>
+        
+        <div class="admin-group">
+            <label>Primary Color</label>
+            <input type="color" id="admin-primary-color" oninput="updateTheme('primaryColor', this.value)">
+        </div>
+        
+        <div class="admin-group">
+            <label>Accent Color</label>
+            <input type="color" id="admin-accent-color" oninput="updateTheme('accentColor', this.value)">
+        </div>
+        
+        <div class="admin-group">
+            <label>Add Product (JSON)</label>
+            <textarea id="new-product-json" placeholder='{"name": "...", "price": 100, "category": "malas", "image": "..."}'></textarea>
+            <button class="btn btn-small" onclick="addProduct()">Add Product</button>
+        </div>
+        
+        <p class="admin-note">⚠️ Changes are temporary. Edit JSON files to save permanently.</p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
