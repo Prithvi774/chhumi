@@ -5,30 +5,6 @@
   <title>Page Not Found - Chhumi</title>
   <style>
     body {
-      font-family: sans-serif;
-      text-align: center;
-      padding: 100px;
-      background-color: #F5ECE4; /* soft beige */
-      color: #3E2A23; /* deep espresso */
-    }
-    h1 { font-size: 48px; margin-bottom: 20px; }
-    p { font-size: 20px; }
-    a { color: #C6A46C; text-decoration: none; font-weight: bold; }
-  </style>
-</head>
-<body>
-  <h1>404</h1>
-  <p>Oops! The page you’re looking for doesn’t exist.</p>
-  <p><a href="/">Return to Chhumi Home</a></p>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Page Not Found - Chhumi</title>
-  <style>
-    body {
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       text-align: center;
       padding: 100px 20px;
@@ -73,3 +49,595 @@
   <a href="/">Return to Chhumi Home</a>
 </body>
 </html>
+
+  "site": {
+    "name": "Chhumi",
+    "tagline": "Stillness Begins Within.",
+    "logoText": "CHHUMI",
+    "currency": "$"
+  },
+  "theme": {
+    "mode": "dark", 
+    "primaryColor": "#1F2A24",
+    "accentColor": "#C2A46D",
+    "bgColor": "#E7DED4",
+    "textColor": "#2B2623"
+  },
+  "content": {
+    "hero": {
+      "headline": "Stillness Begins Within.",
+      "subtext": "Authentic Bodhichitta malas sourced from Kavrepalanchok, Nepal.",
+      "buttonText": "Shop Collection",
+      "image": "https://images.unsplash.com/photo-1518182170546-0766bc6f9213?q=80&w=2000&auto=format&fit=crop"
+    },
+    "about": {
+      "title": "What is Bodhichitta?",
+      "text": "Bodhichitta, meaning 'awakening mind,' represents the heart of Buddhist practice. These sacred seeds carry centuries of spiritual significance. Worn close to the heart, they serve as gentle anchors—bringing you back to presence."
+    },
+    "origin": {
+      "title": "From the Hills of Kavrepalanchok",
+      "text": "We work directly with artisan families in the Kavrepalanchok district. Each seed is hand-selected, hand-drilled, and hand-strung with intention. There are no factories here. Only the patient hands of artisans.",
+      "image": "https://images.unsplash.com/photo-1544640808-32ca72ac7f37?q=80&w=2000&auto=format&fit=crop"
+    },
+    "footer": {
+      "copyright": "© 2024 Chhumi. All rights reserved. Made with reverence."
+    }
+  }
+}
+[
+  {
+    "id": 1,
+    "name": "The Classic Bodhichitta",
+    "price": 145,
+    "category": "malas",
+    "featured": true,
+    "image": "https://images.unsplash.com/photo-1605218427306-633ba88c9735?q=80&w=1000&auto=format&fit=crop",
+    "description": "Our signature mala features 108 hand-selected Bodhichitta seeds from the Himalayan region."
+  },
+  {
+    "id": 2,
+    "name": "Earth & Gold Mala",
+    "price": 165,
+    "category": "malas",
+    "featured": false,
+    "image": "https://images.unsplash.com/photo-1611085583191-a3b181a88401?q=80&w=1000&auto=format&fit=crop",
+    "description": "Combines authentic Bodhichitta seeds with 14k gold-filled accent beads."
+  },
+  {
+    "id": 3,
+    "name": "The Meditation Wrap",
+    "price": 120,
+    "category": "bracelets",
+    "featured": true,
+    "image": "https://images.unsplash.com/photo-1620799140408-ed5341cd2431?q=80&w=1000&auto=format&fit=crop",
+    "description": "A versatile 5-wrap bracelet featuring 54 Bodhichitta seeds."
+  },
+  {
+    "id": 4,
+    "name": "Travel Pouch Set",
+    "price": 45,
+    "category": "accessories",
+    "featured": false,
+    "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=1000&auto=format&fit=crop",
+    "description": "Protect your mala with these handwoven silk pouches made by artisan women."
+  }
+]
+:root {
+    /* Dynamic Variables - Updated by JS */
+    --primary: #1F2A24;
+    --accent: #C2A46D;
+    --bg: #E7DED4;
+    --text: #2B2623;
+    --card-bg: #F0EBE3;
+    
+    /* Static Layout Variables */
+    --font-heading: 'Cormorant Garamond', serif;
+    --font-body: 'Montserrat', sans-serif;
+    --spacing: 8rem;
+    --transition: all 0.4s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 300; }
+a { text-decoration: none; color: inherit; transition: var(--transition); }
+img { max-width: 100%; display: block; object-fit: cover; }
+
+/* --- Navigation --- */
+nav {
+    position: fixed; top: 0; width: 100%; padding: 2rem 5%;
+    display: flex; justify-content: space-between; align-items: center;
+    z-index: 1000; mix-blend-mode: difference; color: var(--bg);
+}
+.logo { font-family: var(--font-heading); font-size: 1.8rem; letter-spacing: 0.15em; text-transform: uppercase; }
+.nav-links { display: flex; gap: 2rem; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; }
+
+/* --- Hero --- */
+.hero {
+    height: 100vh; width: 100%; position: relative;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; background: var(--primary);
+}
+.hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
+.hero-content { position: relative; z-index: 10; text-align: center; color: var(--bg); max-width: 800px; padding: 0 2rem; }
+.hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 1.5rem; font-style: italic; }
+.hero p { font-size: 1rem; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.8; margin-bottom: 2rem; }
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block; padding: 1rem 2.5rem;
+    border: 1px solid var(--accent); color: var(--accent);
+    font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+    background: transparent; cursor: pointer; transition: var(--transition);
+}
+.btn:hover { background: var(--accent); color: var(--primary); }
+.btn-primary { background: var(--primary); color: var(--bg); border-color: var(--primary); }
+.btn-primary:hover { background: var(--accent); color: var(--primary); }
+
+/* --- Sections --- */
+section { padding: var(--spacing) 5%; }
+.section-header { text-align: center; margin-bottom: 4rem; }
+.section-header h2 { font-size: 3rem; color: var(--primary); margin-bottom: 1rem; }
+
+/* --- Product Grid --- */
+.product-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 3rem; max-width: 1200px; margin: 0 auto;
+}
+.product-card {
+    background: var(--card-bg); cursor: pointer;
+    transition: transform 0.4s ease;
+}
+.product-card:hover { transform: translateY(-5px); }
+.product-img { aspect-ratio: 3/4; overflow: hidden; position: relative; }
+.product-img img { width: 100%; height: 100%; transition: transform 0.8s ease; }
+.product-card:hover .product-img img { transform: scale(1.05); }
+.product-info { padding: 1.5rem; text-align: center; }
+.product-name { font-size: 1.4rem; color: var(--primary); margin-bottom: 0.5rem; }
+.product-price { color: var(--accent); font-weight: 500; margin-bottom: 1rem; display: block; }
+
+/* --- Cart Drawer --- */
+.cart-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5); z-index: 2000;
+    display: none; justify-content: flex-end;
+}
+.cart-overlay.active { display: flex; }
+.cart-drawer {
+    width: 400px; max-width: 90%; height: 100%;
+    background: var(--bg); padding: 2rem;
+    transform: translateX(100%); transition: transform 0.5s ease;
+    display: flex; flex-direction: column;
+}
+.cart-overlay.active .cart-drawer { transform: translateX(0); }
+.cart-items { flex-grow: 1; overflow-y: auto; margin: 2rem 0; }
+.cart-item { display: flex; gap: 1rem; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 1rem; }
+.cart-item img { width: 60px; height: 80px; }
+.cart-total { font-size: 1.2rem; font-weight: 600; display: flex; justify-content: space-between; margin-bottom: 1rem; }
+
+/* --- Admin Panel (Customization) --- */
+.admin-toggle {
+    position: fixed; bottom: 20px; right: 20px;
+    background: var(--primary); color: #fff;
+    width: 50px; height: 50px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; z-index: 3000; box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.admin-panel {
+    position: fixed; bottom: 80px; right: 20px;
+    width: 300px; background: #fff;
+    padding: 1.5rem; border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    z-index: 3000; display: none;
+}
+.admin-panel.active { display: block; }
+.admin-group { margin-bottom: 1rem; }
+.admin-group label { display: block; font-size: 0.8rem; margin-bottom: 0.3rem; font-weight: 600; }
+.admin-group input, .admin-group select { width: 100%; padding: 0.5rem; border: 1px solid #ddd; }
+
+/* Mobile */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero h1 { font-size: 2.5rem; }
+    section { padding: 4rem 5%; }
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chhumi</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo" id="nav-logo">CHHUMI</div>
+        <div class="nav-links">
+            <a href="#shop">Shop</a>
+            <a href="#about">Story</a>
+            <a href="#" onclick="toggleCart()">Cart (<span id="cart-count">0</span>)</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Dynamic Content) -->
+    <section class="hero">
+        <img src="" alt="Hero Background" class="hero-bg" id="hero-img">
+        <div class="hero-content">
+            <h1 id="hero-headline">Loading...</h1>
+            <p id="hero-subtext">Loading...</p>
+            <a href="#shop" class="btn" id="hero-btn">Shop</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="section-header">
+            <h2 id="about-title">Loading...</h2>
+            <p id="about-text" style="max-width: 600px; margin: 0 auto;"></p>
+        </div>
+    </section>
+
+    <!-- Origin Section -->
+    <section id="origin" style="background: var(--card-bg);">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 1200px; margin: 0 auto;">
+            <img src="" id="origin-img" style="width: 100%; border-radius: 4px;">
+            <div>
+                <h2 id="origin-title" style="margin-bottom: 1.5rem; color: var(--primary);"></h2>
+                <p id="origin-text"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop Section (Dynamic Products) -->
+    <section id="shop">
+        <div class="section-header">
+            <h2>The Collection</h2>
+        </div>
+        <div class="product-grid" id="product-container">
+            <!-- Products injected via JS -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--primary); color: var(--bg); padding: 4rem 5%; text-align: center;">
+        <div class="logo" style="margin-bottom: 2rem;" id="footer-logo">CHHUMI</div>
+        <p id="footer-text" style="opacity: 0.6; font-size: 0.8rem;"></p>
+    </footer>
+
+    <!-- Cart Drawer -->
+    <div class="cart-overlay" id="cart-overlay">
+        <div class="cart-drawer">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h3>Your Cart</h3>
+                <span onclick="toggleCart()" style="cursor: pointer; font-size: 1.5rem;">&times;</span>
+            </div>
+            <div class="cart-items" id="cart-items-container">
+                <!-- Cart Items injected via JS -->
+                <p style="text-align: center; margin-top: 2rem; opacity: 0.6;">Your cart is empty.</p>
+            </div>
+            <div class="cart-total">
+                <span>Subtotal</span>
+                <span id="cart-total-price">$0.00</span>
+            </div>
+            <button class="btn btn-primary" style="width: 100%;">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Admin / Customization Panel -->
+    <div class="admin-toggle" onclick="toggleAdmin()">⚙️</div>
+    <div class="admin-panel" id="admin-panel">
+        <h4 style="margin-bottom: 1rem; border-bottom: 1px solid #eee; padding-bottom: 0.5rem;">Site Customization</h4>
+        
+        <div class="admin-group">
+            <label>Site Name</label>
+            <input type="text" id="admin-site-name" oninput="updateConfig('site.name', this.value)">
+        </div>
+        <div class="admin-group">
+            <label>Primary Color</label>
+            <input type="color" id="admin-primary-color" oninput="updateTheme('primaryColor', this.value)">
+        </div>
+        <div class="admin-group">
+            <label>Accent Color</label>
+            <input type="color" id="admin-accent-color" oninput="updateTheme('accentColor', this.value)">
+        </div>
+        <div class="admin-group">
+            <label>Theme Mode</label>
+            <select onchange="toggleThemeMode(this.value)">
+                <option value="light">Light Mode</option>
+                <option value="dark">Dark Mode</option>
+            </select>
+        </div>
+        <div class="admin-group">
+            <label>Add Product (JSON)</label>
+            <textarea id="new-product-json" style="width: 100%; height: 80px; font-size: 0.7rem;" placeholder='{"name": "...", "price": 0, "image": "..."}'></textarea>
+            <button class="btn btn-primary" style="margin-top: 0.5rem; width: 100%; font-size: 0.7rem;" onclick="addProduct()">Add Product</button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
+// State Management
+let configData = {};
+let productsData = [];
+let cart = [];
+
+// 1. Initialize Website
+document.addEventListener('DOMContentLoaded', async () => {
+    await loadData();
+    renderSite();
+    renderProducts();
+});
+
+// 2. Load Data from JSON files
+async function loadData() {
+    try {
+        const configRes = await fetch('data/config.json');
+        configData = await configRes.json();
+        
+        const productsRes = await fetch('data/products.json');
+        productsData = await productsRes.json();
+    } catch (error) {
+        console.error("Error loading data:", error);
+        alert("Error loading website data. Ensure you are running this on a local server (e.g., Live Server in VS Code) because browsers block JSON fetching from local files for security.");
+    }
+}
+
+// 3. Render Static Content (Hero, About, etc.)
+function renderSite() {
+    // Theme Colors
+    document.documentElement.style.setProperty('--primary', configData.theme.primaryColor);
+    document.documentElement.style.setProperty('--accent', configData.theme.accentColor);
+    document.documentElement.style.setProperty('--bg', configData.theme.bgColor);
+    document.documentElement.style.setProperty('--text', configData.theme.textColor);
+
+    // Text Content
+    document.getElementById('nav-logo').textContent = configData.site.logoText;
+    document.getElementById('footer-logo').textContent = configData.site.logoText;
+    document.title = configData.site.name;
+    
+    document.getElementById('hero-headline').textContent = configData.content.hero.headline;
+    document.getElementById('hero-subtext').textContent = configData.content.hero.subtext;
+    document.getElementById('hero-btn').textContent = configData.content.hero.buttonText;
+    document.getElementById('hero-img').src = configData.content.hero.image;
+
+    document.getElementById('about-title').textContent = configData.content.about.title;
+    document.getElementById('about-text').textContent = configData.content.about.text;
+
+    document.getElementById('origin-title').textContent = configData.content.origin.title;
+    document.getElementById('origin-text').textContent = configData.content.origin.text;
+    document.getElementById('origin-img').src = configData.content.origin.image;
+
+    document.getElementById('footer-text').textContent = configData.content.footer.copyright;
+
+    // Populate Admin Inputs
+    document.getElementById('admin-site-name').value = configData.site.name;
+    document.getElementById('admin-primary-color').value = rgbToHex(configData.theme.primaryColor);
+    document.getElementById('admin-accent-color').value = rgbToHex(configData.theme.accentColor);
+}
+
+// 4. Render Products Dynamically
+function renderProducts() {
+    const container = document.getElementById('product-container');
+    container.innerHTML = '';
+
+    productsData.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+            <div class="product-img">
+                <img src="${product.image}" alt="${product.name}">
+                ${product.featured ? '<span style="position:absolute; top:10px; left:10px; background:var(--primary); color:#fff; padding:4px 8px; font-size:0.6rem; text-transform:uppercase;">Featured</span>' : ''}
+            </div>
+            <div class="product-info">
+                <h3 class="product-name">${product.name}</h3>
+                <span class="product-price">${configData.site.currency}${product.price}</span>
+                <button class="btn btn-primary" style="width:100%" onclick="addToCart(${product.id})">Add to Cart</button>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+}
+
+// 5. Cart Functionality
+function addToCart(id) {
+    const product = productsData.find(p => p.id === id);
+    const existingItem = cart.find(item => item.id === id);
+
+    if (existingItem) {
+        existingItem.qty++;
+    } else {
+        cart.push({ ...product, qty: 1 });
+    }
+    updateCartUI();
+    toggleCart(true); // Open cart
+}
+
+function removeFromCart(id) {
+    cart = cart.filter(item => item.id !== id);
+    updateCartUI();
+}
+
+function updateCartUI() {
+    const container = document.getElementById('cart-items-container');
+    const countSpan = document.getElementById('cart-count');
+    const totalSpan = document.getElementById('cart-total-price');
+
+    // Update Count
+    const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+    countSpan.textContent = totalQty;
+
+    // Update Total Price
+    const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+    totalSpan.textContent = `${configData.site.currency}${totalPrice.toFixed(2)}`;
+
+    // Render Items
+    if (cart.length === 0) {
+        container.innerHTML = '<p style="text-align: center; margin-top: 2rem; opacity: 0.6;">Your cart is empty.</p>';
+    } else {
+        container.innerHTML = cart.map(item => `
+            <div class="cart-item">
+                <img src="${item.image}" alt="${item.name}">
+                <div style="flex-grow: 1;">
+                    <h4 style="font-size: 0.9rem;">${item.name}</h4>
+                    <p style="font-size: 0.8rem; color: var(--accent);">${configData.site.currency}${item.price} x ${item.qty}</p>
+                </div>
+                <span onclick="removeFromCart(${item.id})" style="cursor: pointer; color: red; font-size: 1.2rem;">&times;</span>
+            </div>
+        `).join('');
+    }
+}
+
+function toggleCart(forceOpen = false) {
+    const overlay = document.getElementById('cart-overlay');
+    if (forceOpen) {
+        overlay.classList.add('active');
+    } else {
+        overlay.classList.toggle('active');
+    }
+}
+
+// 6. Admin / Customization Logic
+function toggleAdmin() {
+    document.getElementById('admin-panel').classList.toggle('active');
+}
+
+function updateConfig(path, value) {
+    // Simple nested object updater
+    const keys = path.split('.');
+    let obj = configData;
+    for (let i = 0; i < keys.length - 1; i++) {
+        obj = obj[keys[i]];
+    }
+    obj[keys[keys.length - 1]] = value;
+    renderSite(); // Re-render to show changes
+}
+
+function updateTheme(key, value) {
+    configData.theme[key] = value;
+    document.documentElement.style.setProperty(`--${key === 'primaryColor' ? 'primary' : key === 'accentColor' ? 'accent' : key}`, value);
+}
+
+function toggleThemeMode(mode) {
+    if (mode === 'dark') {
+        updateTheme('bgColor', '#1F2A24');
+        updateTheme('textColor', '#E7DED4');
+        updateTheme('primaryColor', '#E7DED4'); // Invert for contrast
+        updateTheme('accentColor', '#C2A46D');
+    } else {
+        updateTheme('bgColor', '#E7DED4');
+        updateTheme('textColor', '#2B2623');
+        updateTheme('primaryColor', '#1F2A24');
+        updateTheme('accentColor', '#C2A46D');
+    }
+}
+
+function addProduct() {
+    try {
+        const jsonInput = document.getElementById('new-product-json').value;
+        const newProduct = JSON.parse(jsonInput);
+        // Assign ID automatically
+        newProduct.id = productsData.length + 1;
+        productsData.push(newProduct);
+        renderProducts();
+        alert('Product added!');
+        document.getElementById('new-product-json').value = '';
+    } catch (e) {
+        alert('Invalid JSON format');
+    }
+}
+
+// Helper: Convert RGB to Hex for color pickers
+function rgbToHex(rgb) {
+    if (rgb.startsWith('#')) return rgb;
+    // Simple fallback if not hex
+    return '#1F2A24'; 
+}
+{
+  "site": {
+    "name": "Chhumi",
+    "tagline": "Stillness Begins Within.",
+    "logoText": "CHHUMI",
+    "currency": "$"
+  },
+  "theme": {
+    "mode": "dark", 
+    "primaryColor": "#1F2A24",
+    "accentColor": "#C2A46D",
+    "bgColor": "#E7DED4",
+    "textColor": "#2B2623"
+  },
+  "content": {
+    "hero": {
+      "headline": "Stillness Begins Within.",
+      "subtext": "Authentic Bodhichitta malas sourced from Kavrepalanchok, Nepal.",
+      "buttonText": "Shop Collection",
+      "image": "https://images.unsplash.com/photo-1518182170546-0766bc6f9213?q=80&w=2000&auto=format&fit=crop"
+    },
+    "about": {
+      "title": "What is Bodhichitta?",
+      "text": "Bodhichitta, meaning 'awakening mind,' represents the heart of Buddhist practice. These sacred seeds carry centuries of spiritual significance. Worn close to the heart, they serve as gentle anchors—bringing you back to presence."
+    },
+    "origin": {
+      "title": "From the Hills of Kavrepalanchok",
+      "text": "We work directly with artisan families in the Kavrepalanchok district. Each seed is hand-selected, hand-drilled, and hand-strung with intention. There are no factories here. Only the patient hands of artisans.",
+      "image": "https://images.unsplash.com/photo-1544640808-32ca72ac7f37?q=80&w=2000&auto=format&fit=crop"
+    },
+    "footer": {
+      "copyright": "© 2024 Chhumi. All rights reserved. Made with reverence."
+    }
+  }
+}
+[
+  {
+    "id": 1,
+    "name": "The Classic Bodhichitta",
+    "price": 145,
+    "category": "malas",
+    "featured": true,
+    "image": "https://images.unsplash.com/photo-1605218427306-633ba88c9735?q=80&w=1000&auto=format&fit=crop",
+    "description": "Our signature mala features 108 hand-selected Bodhichitta seeds from the Himalayan region."
+  },
+  {
+    "id": 2,
+    "name": "Earth & Gold Mala",
+    "price": 165,
+    "category": "malas",
+    "featured": false,
+    "image": "https://images.unsplash.com/photo-1611085583191-a3b181a88401?q=80&w=1000&auto=format&fit=crop",
+    "description": "Combines authentic Bodhichitta seeds with 14k gold-filled accent beads."
+  },
+  {
+    "id": 3,
+    "name": "The Meditation Wrap",
+    "price": 120,
+    "category": "bracelets",
+    "featured": true,
+    "image": "https://images.unsplash.com/photo-1620799140408-ed5341cd2431?q=80&w=1000&auto=format&fit=crop",
+    "description": "A versatile 5-wrap bracelet featuring 54 Bodhichitta seeds."
+  },
+  {
+    "id": 4,
+    "name": "Travel Pouch Set",
+    "price": 45,
+    "category": "accessories",
+    "featured": false,
+    "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=1000&auto=format&fit=crop",
+    "description": "Protect your mala with these handwoven silk pouches made by artisan women."
+  }
+]
+
+
+
