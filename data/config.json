@@ -1,0 +1,35 @@
+{
+  "site": {
+    "name": "Chhumi",
+    "tagline": "Stillness Begins Within",
+    "logoText": "CHHUMI",
+    "currency": "$"
+  },
+  "theme": {
+    "mode": "light",
+    "primaryColor": "#8B9D83",
+    "accentColor": "#C9B99A",
+    "bgColor": "#F5F1E8",
+    "textColor": "#4A4436"
+  },
+  "content": {
+    "hero": {
+      "headline": "Stillness Begins Within.",
+      "subtext": "Authentic Bodhichitta malas sourced from Kavrepalanchok, Nepal.",
+      "buttonText": "Shop Collection",
+      "image": "https://images.unsplash.com/photo-1518182170546-0766bc6f9213?q=80&w=2000&auto=format&fit=crop"
+    },
+    "about": {
+      "title": "What is Bodhichitta?",
+      "text": "Bodhichitta, meaning 'awakening mind,' represents the heart of Buddhist practice. These sacred seeds carry centuries of spiritual significance. Worn close to the heart, they serve as gentle anchors—bringing you back to presence, to breath, to the stillness that exists beneath all movement."
+    },
+    "origin": {
+      "title": "From the Hills of Kavrepalanchok",
+      "text": "We work directly with artisan families in the Kavrepalanchok district, where the Bodhichitta trees grow in abundance. Each seed is hand-selected, hand-drilled, and hand-strung with intention and care. There are no factories here. No mass production. Only the patient hands of artisans who understand that these are not merely objects, but vessels of spiritual practice.",
+      "image": "https://images.unsplash.com/photo-1544640808-32ca72ac7f37?q=80&w=2000&auto=format&fit=crop"
+    },
+    "footer": {
+      "copyright": "© 2024 Chhumi. All rights reserved. Made with reverence. 🙏"
+    }
+  }
+}
