@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "The Classic Bodhichitta",
+    "price": 145,
+    "category": "malas",
+    "featured": true,
+    "image": "https://images.unsplash.com/photo-1605218427306-633ba88c9735?q=80&w=1000&auto=format&fit=crop",
+    "description": "108 hand-selected Bodhichitta seeds from the Himalayan region."
+  },
+  {
+    "id": 2,
+    "name": "Earth & Gold Mala",
+    "price": 165,
+    "category": "malas",
+    "featured": false,
+    "image": "https://images.unsplash.com/photo-1611085583191-a3b181a88401?q=80&w=1000&auto=format&fit=crop",
+    "description": "Authentic seeds with 14k gold-filled accent beads."
+  },
+  {
+    "id": 3,
+    "name": "The Meditation Wrap",
+    "price": 120,
+    "category": "bracelets",
+    "featured": true,
+    "image": "https://images.unsplash.com/photo-1620799140408-ed5341cd2431?q=80&w=1000&auto=format&fit=crop",
+    "description": "5-wrap bracelet with 54 Bodhichitta seeds."
+  },
+  {
+    "id": 4,
+    "name": "Travel Pouch Set",
+    "price": 45,
+    "category": "accessories",
+    "featured": false,
+    "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=1000&auto=format&fit=crop",
+    "description": "Handwoven silk pouches by Nepali artisans. Set of 2."
+  }
+]
